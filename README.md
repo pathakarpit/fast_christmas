@@ -11,3 +11,5 @@ Process:
 7) setup notebooks/test.ipynb : perform all the testing that needs to be done with the data and model creation
 8) setup a directory `data` for storing the dataset
 9) setup training/train_utils.py : create __init__.py file in the training folder. create utility functions and constants
+10) setup training/train_model.py : create the file that will perform the decided actions on the test notebook and store the model in a saperate folder
+11) setup app/cache/redis_cache.py : setup caching
