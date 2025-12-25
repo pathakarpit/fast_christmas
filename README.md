@@ -8,3 +8,6 @@ Process:
 4) setup app/core/dependencies.py : bridge the dependencies for authorisation
 5) setup app/core/exceptions.py : handle exceptions (500 types)
 6) setup app/api/routes_auth.py : make sure to create __init__.py file in api folder. create function for authorisations.
+7) setup notebooks/test.ipynb : perform all the testing that needs to be done with the data and model creation
+8) setup a directory `data` for storing the dataset
+9) setup training/train_utils.py : create __init__.py file in the training folder. create utility functions and constants
