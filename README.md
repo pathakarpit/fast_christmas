@@ -13,3 +13,5 @@ Process:
 9) setup training/train_utils.py : create __init__.py file in the training folder. create utility functions and constants
 10) setup training/train_model.py : create the file that will perform the decided actions on the test notebook and store the model in a saperate folder
 11) setup app/cache/redis_cache.py : setup caching
+12) setup app/services/model_service.py : load model, predict output, check cache for existing inputs
+13) setup app/api/routes_predict.py : define fastAPI endpoint for the car price prediction by using a router and defining the model of input
