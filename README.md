@@ -1,27 +1,70 @@
-# fast_christmas
-A project built on christmas morning to showcase implementation of FastAPI with AI
+# Fast Christmas: Production-Grade ML Inference Service
+Fast Christmas is a high-performance, containerized microservice built to deliver real-time car price predictions through a robust FastAPI backend. The project demonstrates a full-lifecycle engineering approach, from an automated machine learning pipeline to secure, observable deployment in a microservices environment.
 
-Process:
-1) setup .env file : simply setup the environment variables (will not be included in git)
-2) setuo app/core/config.py : create the app folder and include the __init__.py file to read it as a package. Define the configuration variables.
-3) setuo app/core/security.py : define the functions for creating and verifying tokens.
-4) setup app/core/dependencies.py : bridge the dependencies for authorisation
-5) setup app/core/exceptions.py : handle exceptions (500 types)
-6) setup app/api/routes_auth.py : make sure to create __init__.py file in api folder. create function for authorisations.
-7) setup notebooks/test.ipynb : perform all the testing that needs to be done with the data and model creation
-8) setup a directory `data` for storing the dataset
-9) setup training/train_utils.py : create __init__.py file in the training folder. create utility functions and constants
-10) setup training/train_model.py : create the file that will perform the decided actions on the test notebook and store the model in a saperate folder
-11) setup app/cache/redis_cache.py : setup caching
-12) setup app/services/model_service.py : load model, predict output, check cache for existing inputs
-13) setup app/api/routes_predict.py : define fastAPI endpoint for the car price prediction by using a router and defining the model of input
-14) setup app/middleware/logging_middleware.py : capture the rsponse of the middleware
-15) setup app/main.py : put everything together
-16) setup Dockerfile : 
-17) setup prometheus.yml :
-18) setup docker-compose.yml :
-19) setup requirements.txt : 
+## Engineering Highlights
+Automated ML Pipeline & Persistence: Developed a structured training workflow using Scikit-Learn pipelines, incorporating ColumnTransformer for automated numerical scaling and categorical encoding. The final Random Forest Regressor is persisted via joblib for seamless integration into the inference service.
 
-Testing locally:
-1) run docker-compose up --build : will just install the necessary libraries and run all the services in containers
-2) debug all the issues one by one
+### High-Performance Caching: 
+Optimized API latency by implementing a Redis caching layer. The service intelligently caches prediction results based on input feature hashes, significantly reducing redundant compute cycles for recurring queries.
+
+### Enterprise-Grade Security: 
+Architected a dual-layer security model utilizing JWT (JSON Web Tokens) for user session management and custom Header-based API Key validation for secure service-to-service communication.
+
+### Full-Stack Observability: 
+Integrated a comprehensive monitoring suite using Prometheus and Grafana. The service exports real-time performance metrics via prometheus-fastapi-instrumentator and includes custom logging middleware to track request/response lifecycles.
+
+### Microservices Architecture: 
+Fully containerized using Docker and Docker Compose, orchestrating the API, Redis, Prometheus, and Grafana into a cohesive, scalable backend.
+
+### Resilient Design: 
+Implemented global exception handling and structured Pydantic data validation to ensure API stability and consistent error reporting (500-series handling).
+
+## Tech Stack
+### Backend: 
+Python 3.12, FastAPI, Pydantic, Uvicorn.
+
+### Machine Learning: 
+Scikit-Learn (Random Forest), Pandas, Joblib.
+
+### Data & Infrastructure: 
+Redis (Caching), Docker, Docker Compose.
+
+### DevOps & Monitoring: 
+Prometheus, Grafana, Starlette Middleware.
+
+### Security: 
+Python-Jose (JWT), Dotenv.
+
+---
+
+## Getting Started (Local)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/fastapi-project.git
+cd fastapi-project
+```
+
+### 2. Set Environment Variables
+
+```bash
+API_KEY=demo-key
+JWT_SECRET_KEY=your-secret
+REDIS_URL=redis://localhost:6379
+```
+
+### 3. Build and Run via Docker
+
+```bash
+docker-compose up --build
+```
+
+### 4. Access Interfaces
+
+- FastAPI Docs: http://localhost:8000/docs
+- FastAPI Metrics: http://localhost:8000/metrics
+- Prometheus UI: http://localhost:9090
+- Grafana UI: http://localhost:3000
+
+---
