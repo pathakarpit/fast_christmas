@@ -17,3 +17,6 @@ Process:
 13) setup app/api/routes_predict.py : define fastAPI endpoint for the car price prediction by using a router and defining the model of input
 14) setup app/middleware/logging_middleware.py : capture the rsponse of the middleware
 15) setup app/main.py : put everything together
+16) setup Dockerfile : 
+17) setup prometheus.yml :
+18) setup docker-compose.yml :
