@@ -20,3 +20,4 @@ Process:
 16) setup Dockerfile : 
 17) setup prometheus.yml :
 18) setup docker-compose.yml :
+19) setup requirements.txt : 
