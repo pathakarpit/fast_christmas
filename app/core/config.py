@@ -1,7 +1,7 @@
 import os
-from dotenv import load_env
+from dotenv import load_dotenv
 
-load_env()
+load_dotenv()
 
 class Settings:
     PROJECT_NAME: str = "Fast Christmas"
@@ -9,6 +9,6 @@ class Settings:
     JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "secret")
     JWT_ALGORITHM: str = "HS256"
     REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379")
-    MODEL_PATH: str = "app/models/model.pkl"
+    MODEL_PATH: str = "app/models/model.joblib"
 
 settings = Settings()

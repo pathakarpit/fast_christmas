@@ -21,3 +21,7 @@ Process:
 17) setup prometheus.yml :
 18) setup docker-compose.yml :
 19) setup requirements.txt : 
+
+Testing locally:
+1) run docker-compose up --build : will just install the necessary libraries and run all the services in containers
+2) debug all the issues one by one

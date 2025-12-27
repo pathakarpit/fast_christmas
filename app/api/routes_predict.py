@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from app.core.dependencies import get_api_key, get_current_user
 from app.services.model_service import predict_car_price
 
-router - APIRouter()
+router = APIRouter()
 
 class CarFeatures(BaseModel):
     company: str
