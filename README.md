@@ -15,3 +15,5 @@ Process:
 11) setup app/cache/redis_cache.py : setup caching
 12) setup app/services/model_service.py : load model, predict output, check cache for existing inputs
 13) setup app/api/routes_predict.py : define fastAPI endpoint for the car price prediction by using a router and defining the model of input
+14) setup app/middleware/logging_middleware.py : capture the rsponse of the middleware
+15) setup app/main.py : put everything together
